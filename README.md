@@ -4,11 +4,11 @@
 
 Mini-Batch GD | Adam Optimizer | Dropout | Full Forward + Backprop | Visualizations
 
-This repository contains a complete scratch implementation of a Deep Neural Network (DNN) trained on a real dataset (e.g., Wine Dataset).
+This repository contains a complete scratch implementation of a Deep Neural Network (DNN) trained on a synthetic dataset.
 Everything is implemented from first principles—no TensorFlow, no PyTorch.
 
 
----
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 📌 What This Project Covers
 
@@ -34,13 +34,11 @@ Training loop
 
 Visualizations to build intuition
 
-t-SNE/PCA understanding of feature space
-
 Full mathematical explanations
 
 
 
----
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 🏗️ 1. Architecture Overview
 
@@ -62,7 +60,7 @@ Regression → linear
 
 
 
----
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ⚙️ 2. Forward Propagation
 
@@ -80,7 +78,7 @@ $$\text{ReLU}(z)$$=$$\max(0,z)$$
 $$\tanh(z)$$=$$\frac{e^z - e^{-z}}{e^z+e^{-z}}$$
 
 
----
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 🔁 3. Backpropagation
 
@@ -97,16 +95,16 @@ $4db^{[l]}$$ = $$\frac{1}{m} \sum dZ^{[l]}$$
 $$dA^{[l-1]}$$ = $$W^{[l]T} dZ^{[l]}$$
 
 
----
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 📉 4. Loss Function
 
 For binary classification:
 
-$$\mathcal{L}$$ = $$-\frac{1}{m} \sum (y\log\hat{y} + (1-y)\log(1-\hat{y}))$4
+$$\mathcal{L}$$ = $$-\frac{1}{m} \sum (y\log\hat{y} + (1-y)\log(1-\hat{y}))$$
 
 
----
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 🧩 5. Mini-Batch Gradient Descent
 
@@ -124,7 +122,7 @@ Less memory usage
 
 
 
----
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 🚀 6. Adam Optimizer (From Scratch)
 
@@ -149,7 +147,7 @@ $$\hat{s}_t$$ = $$\frac{s_t}{1-\beta_2^t} $$
 $$\theta$$ = $$\theta - \alpha \frac{\hat{v}_t}{\sqrt{\hat{s}_t}+\epsilon}$$
 
 
----
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 🧨 7. Dropout Regularization
 
@@ -162,15 +160,15 @@ $$A^{[l]}$$ = $$\frac{A^{[l]} \odot D^{[l]}}{keep\_prob}$$
 During inference → dropout disabled.
 
 
----
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 📦 8. Caching System
 
 During forward pass you store:
 
+$$z^{[l]}$$
 
-
-
+$$a^{[l]}$$
 
 dropout masks
 
@@ -180,42 +178,53 @@ parameters
 Cache is essential for computing backward propagation efficiently.
 
 
----
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 🔍 9. Visualizations Included
 
 This repo provides intuitive plots:
 
-✔ Loss curve
+🎯 Loss curve , Acuuracy curve
 
 Visualizing convergence.
+🎯 Neural Network Layers as Feature Transformers (2D → 3D → 2D)
 
-✔ Activation functions
+🎯 Activation functions
 
 ReLU, TanH, Sigmoid plots.
 
-✔ Decision boundary
+🎯 Decision boundary
 
 Shows how the neural network separates classes.
 
-✔ Layer activations
+🎯 Layer activation
 
-Heatmaps to show neuron firing patterns.
+to show neuron firing patterns.
 
-✔ Adam vs RMSProp vs SGD comparison plots
+🎯 Dropout Mask Effect
+
+🎯 Mini-Batch Gradient Descent Visualization
+
+🎯 Adam Optimizer m & v Moment Visualization
+
+🎯 Adam vs RMSProp vs SGD comparison plots
 
 Understanding optimizer behavior.
 
-✔ Learning rate effect visualization
+🎯 Learning rate effect visualization
 
 Training curves for different .
 
-✔ PCA / t-SNE projections
+🎯 Backpropagation Gradient Flow (Vanishing/Exploding)
 
-How data clusters before vs. after training.
+🎯 Training Loss Curve (Typical Deep Network)
+
+🎯 Cross-Entropy Loss Surface Visualization
+
+🎯 Weight Updates Over Iterations Visualization
 
 
----
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 🧪 10. Dataset
 
@@ -223,3 +232,13 @@ Synthetic Dataset
 
 
 All features scaled before training.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# 📁 12. Repository Structure
+├── ann_scratch.ipynb
+├── visualizations/
+│   ├── loss_curve.png
+│   ├── Neural Network Layers as Feature Transformers (2D → 3D → 2D).png
+│   ├── decision_boundary.png
+│   ├── optimizers_compare.png
+│   ├── Dropout Mask Effect Visualization.png
+└── README.md
